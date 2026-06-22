@@ -1,0 +1,16 @@
+# Local development override — run only MongoDB and Redis in Docker
+# Usage: docker compose up -d
+# This starts only the databases, then run backend, frontend, and ml-service locally
+
+version: '3.8'
+
+services:
+  backend:
+    profiles:
+      - donotstart
+  frontend:
+    profiles:
+      - donotstart
+  ml-service:
+    profiles:
+      - donotstart
